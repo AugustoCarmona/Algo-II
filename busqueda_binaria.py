@@ -25,6 +25,14 @@ print(busqueda_binaria(lista, elemento))
 """
 consola: 4
 
-esto fue casi un copy paste y la verdad que no entiendo bien como funciona, asi que me voy a comer, quiza despues me vea un cap
-de friends y mas tarde actualizo bien la descripcion de este algoritmo por que ahora tengo paja
+El objetivo de la busqueda binaria es (dado un arreglo ordenado), identificar si un elemento dado pertenece a este arreglo,
+devolviendo la posicion del mismo en caso de pertenecer, o devolviendo None en caso de no pertenecer.
+Procedimiento:
+Una vez se tiene el largo del arreglo, se divide a este a la mitad y se toma dicha mitad como punto de comparacion.
+Si esta mitad es el elemento que estamos buscando, entonces este ya fue encontrado; si no, si esta mitad es mas grande,
+significa que el elemento que buscamos es mas chico y necesitamos seguir iterando la mitad de la izquiera de nuestro elemento
+"pivot".
+Si es mas chico, entonces el elemento que buscamos esta a su derecha.
+La idea es seguir iterando hasta que el valor de nuestro punto medio sea el del elemento que buscamos o hayamos recorrido toda
+la lista.
 """
