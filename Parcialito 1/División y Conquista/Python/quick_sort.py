@@ -1,22 +1,24 @@
-def quick_sort(lista):
-
-    largo = len(lista)
-
-    if largo <= 1:
-        return lista
-    else:
-        pivot = lista.pop()
+def quick_sort(arreglo):
     
+    if len(arreglo) <= 1: #caso base
+        return arreglo
+
+    pivot = [arreglo.pop(0)]
     mayores = []
     menores = []
 
-    for numero in lista:
-        if numero > pivot:
-            mayores.append(numero)
+    for i in range(0, len(arreglo)):
+        if arreglo[i] > pivot[0]:
+            mayores.append(arreglo[i])
         else:
-            menores.append(numero)
-    
-    return quick_sort(menores) + [pivot] + quick_sort(mayores)
+            menores.append(arreglo[i])
 
-lista = [273,9,4,83,7,29,2,0,2,46,8,4,47,3,91,1,1,0,2,93,3,8,7,3,87,4,663,2]
-print(quick_sort(lista))
+    return quick_sort(menores) + pivot + quick_sort(mayores)
+
+def main():
+    arreglo = [4,10,8,7,6,5,3,12,14,2]
+    arreglo = quick_sort(arreglo)
+    print(arreglo)
+
+if __name__ == "__main__":
+    main()
