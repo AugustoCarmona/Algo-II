@@ -1,0 +1,54 @@
+# Algoritmos de División y Conquista
+----
+## Quick Sort (caso de estudio en lenguaje C)
+
+La implementación del algoritmo de quicksort consiste en los siguientes pasos.
+
+Necesitamos un vector a ordenar, así como la cantidad de elementos que este tendrá ya que las llamadas al algoritmo recibirán tres parámetros: el vector en sí, una posición de inicio de iteración y una posición de final de esta.
+
+El caso de estudio en el lenguaje C requiere que obtengamos la cantidad de elementos de este vector dividiendo: la cantidad de bytes que ocupa el arreglo por la cantidad de bytes que ocupa el tipo de dato que este arreglo contiene.
+
+````C
+size_t cant_elementos = sizeof(arreglo)/sizeof(tipo_dato);
+````
+
+Llamados a la función recursiva:
+
+Caso base:
+Todo algoritmo recursivo necesita un caso base que será el que indique cuando debe frenarse el algoritmo. En el caso de los algoritmos de ordenamiento este caso base será cuando el la cantidad de elementos en el arreglo sea igual a 1. Por definición un arreglo con un solo elemento o ninguno ya se encuentra ordenado.
+
+Si la posición de final menos la de incio del arreglo da como reltado cualquier cosa menor a dos, el arreglo solo puede tener uno o ningun elementos.
+
+Procedimiento:
+Lo primero que necesitamos es tomar un elemento como **pivote** y otro que se llamara **ultimo elemento menor**. Ambos iniciarán en la posicion de inicio:
+
+````C
+int pivote = inicio;
+int ult_menor = inicio;
+````    
+
+y un **punto medio**:
+
+````C
+int punto_medio = (posicion_inicio + posicion_final) / 2;
+````
+
+y luego intercambiaremos con ayuda de alguna función auxiliar los valores de dicho **punto medio** y el **pivote**. Este es un proceso de optimización para el caso en que nuestro areglo original ya se encuentre ordenado.
+
+Es entonces cuando comienza la iteración.
+Iteraremos con un incremento de una unidad, desde el valor del pivote menos 1 "lo que sería la posicion cero" hasta el final del arreglo, y cada vez que el vector evaluado en la **posición en la que nos encontramos** sea **menor** al valor del vector evaluado en el pivote, intercamiaremos la **posición** en la que nos encontramos con el **último elemento menor** que tengamos, luego de incrementar en una unidad el valor de este último.
+
+Cuando se termine esta itración intercambiaremos el pivote con el último elemento menor. Esto colocará el pivote al final de los menores y con el ultimo menor en el primer lugar. Es decir que ese pivote ya estará ordenado.
+
+Por útimo haremos dos llamadas recursivas, una de las llamadas tomará el incio del arreglo original y el ultimo elemento menor como final, y la otra tomará el último elemento menor más 1 como incio, y el final del arreglo original como final en sí.
+
+> Nota: es importante tener en cuenta que la función de intercambio original no debe intercambiar las posiciones, si no los valores del vector en dichas posiciones.Nota: es importante tener en cuenta que la función de intercambio original no debe intercambiar las posiciones, si no los valores del vector en dichas posiciones.
+
+<center>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/Sorting_quicksort_anim.gif" />
+    </a>
+</center>
+
+> Nota 2: el caso de estudio se tomó de los ejemplos de código de la profesora Margarita Manterola y el profesor Maximiliano Curia en el drive de la materia Algoritmos II "Cátedra Buchwald".
+
+----
