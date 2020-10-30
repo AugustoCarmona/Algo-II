@@ -6,10 +6,10 @@
 
 El algoritmo de ordenamiento Quick Sort recurre a la implementación de un pivote para realizar contra este la comparación del resto de los elementos.
 
-Teniendo como caso base un arreglo de un único elemento, se toma un elemento al azar (aunque lo recomendado es tomar el elemento del medio para evitar el peor caso del algotimo, que es cuando el arreglo ya se encuentra ordenado) y se itera a lo largo de los demás valores, colocando a cada paso el valor en uno de dos nuevos arreglos (los valores que irán a la izquierda del pivote, es decir los menores a este; y los que irán a su derecha, es decir los mayores.
+Teniendo como caso base un arreglo de un único elemento, se toma un componente al azar (aunque lo recomendado es tomar el elemento del medio para evitar el peor caso del algotimo, que es cuando el arreglo ya se encuentra ordenado) y se itera a lo largo de los demás valores, colocando a cada paso el valor **en uno** de dos nuevos arreglos (los valores que irán a la **izquierda del pivote, es decir los menores** a este; y los que irán a su **derecha, es decir los mayores**.
 Los elementos que sean iguales será indistinto a donde se posicionen).
 
-# Bueno me dió sueño, mañana termino con los casos de estudio
+De este forma se llegara al caso base para cada elemento, siendo que este ya estará en la posición del vector que le corresponda, por lo que solo quedará concatenar.
 
 ### Implementación
 
@@ -73,4 +73,14 @@ El algoritmo de Merge Sort consiste en la implementación de un ordenamiento por
 La premisa es simple, partimos el arreglo a ordenar por la mitad, ordenamos sus mitades, y una vez ordenadas sus mitades las intercalamos también de forma ordenada.
 
 Para esto va a ser necesario llegar al caso base, recordemos cualquier arreglo de largo menor o igual a uno por definición va a estar ordenado, para luego comenzar a intercalar con los elementos previamente particionados.
+
+### Implementación
+---
+
+## Binary Search (caso de estudio en lenguaje C)
+
+### Concepto:
+
+
+
 ---

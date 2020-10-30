@@ -1,31 +1,32 @@
-def busqueda_binaria(arreglo, inicio, final, elemento):
+#implementacion iterativa
 
-	if final >= inicio: 
-		mitad = (final + inicio) // 2
+def busqueda_binaria(arreglo, elemento):
+	encontrado = False
+	inicio = 0
+	fin = len(arreglo)
 
-		if arreglo[mitad] == elemento: 
-			return mitad 
+	while inicio <= fin and not encontrado:
+		mitad = (inicio + fin) // 2
 
-		elif arreglo[mitad] > elemento: 
-			return busqueda_binaria(arreglo, inicio, mitad - 1, elemento) 
+		if arreglo[mitad] == elemento:
+			encontrado = True
 
-		else: 
-			return busqueda_binaria(arreglo, mitad + 1, final, elemento) 
+		if arreglo[mitad] > elemento:
+			fin = mitad
 
-	else: 
-		return -1
+		if arreglo[mitad] < elemento:
+			inicio = mitad
 
+	if encontrado:
+		print(f"el elemento solicitado se encontró en la posición {mitad} del arreglo")
+	else:
+		print("el elemento solicitado no se encuentra en el arreglo")
 
 def main():
-    arreglo = [ 2, 3, 4, 10, 40 ] 
-    elemento = 10
+	arreglo = [1,2,3,4,5,6,7,8,9] 
+	elemento = 7
 
-    resultado = busqueda_binaria(arreglo, 0, len(arreglo)-1, elemento) 
-
-    if resultado != -1: 
-    	print(f"El elemento que se busca esta presente en el arreglo en la posición {resultado}") 
-    else: 
-    	print("El elemento que se busca no esta presente en el arreglo") 
+	busqueda_binaria(arreglo, elemento)
 
 if __name__ == "__main__":
     main()
