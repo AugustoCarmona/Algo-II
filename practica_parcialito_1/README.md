@@ -67,9 +67,20 @@ Indicar el orden de ejecución del algoritmo. Justificar.
 
 B. Implementar la función 'void ** cola mulpliprimeros (cola t* cola, size t k)' con el mismo comportamiento dela primitiva anterior
 
-## Ejercicio 6:
+## Ejercicio 5:
 
 Pila Piramidal
 
 Dada una pila de enteros, escribir una función que determine si es piramidal. Una pila de enteros es piramidal si cada elemento es menor a su elemento inferior (en el sentido que va desde el tope de la pila hacia el otro extremo).
 La pila no debe ser modificada.
+
+## Ejercicio 6:
+
+Implementar un algotimo que, por división y conquista, permita obtener la parte entera de la raíz cuadrada de unnúmero n, en tiempo O(n log n).
+Ejemplos:
+    - Para n = 10, debería devolver 3
+    - Para n = 25, debería devolver 5
+
+## Ejercicio 6:
+
+Se tiene una lista en donde todos los elementos son punteros a números enteros. Implementar la función visitar para que calcule la suma de todos los números pares.
