@@ -39,3 +39,18 @@ int main() {
 // [1,1,2,3] --> false
 // [1,2,3,1,1,1] --> true
 // [1] --> true
+
+/*
+Teorema Maestro:
+
+O(n) + 2O(n/2) -> a=2, b=2, c=1 -> logb(a) = 1 = c -> O(n log(n))
+*/
+
+/*
+o...
+
+Teorema Maestro:
+
+T(n) = 2*T(n/2) + O(n) -> A = 2, B = 2, C = 1
+-> log_B(A) = log_2(2) = 1 = C -> O(n^C*log(n)) = O(n^1*log(n)) = O(n*log(n))
+*/

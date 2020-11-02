@@ -4,12 +4,10 @@
 int ordenado(int arr[], size_t ini, size_t fin) {
 
     if (ini == fin || ini == fin-1) {
-        if (arr[ini] > arr [fin]) {
+        if (arr[ini] > arr [fin]) 
             return arr[ini];
-        }
-        else {
-            return NULL;
-        }
+        else
+            return NULL; // cuando no hay ningún elemento desordenado
     }
 
     size_t mitad = (ini+fin)/2;
@@ -31,6 +29,16 @@ int main() {
     return 0;
 }
 
+// Implementar, por división y conquista, una función que dado un arreglo sin elementos repetidos y casi ordenado (todos los elementos se
+// encuentran ordenados,salvo uno), obtenga el elemento fuera de lugar. Indicar y justificar  el orden.
+
 /*
- Implementar, por división y conquista, una función que dado un arreglo sin elementos repetidos y casi ordenado (todos los elementos se encuentran ordenados,salvo uno), obtenga el elemento fuera de lugar. Indicar y justificar  el orden.
+Siendo n la cantidad de elementos del arreglo:
+T(n) = 6.O(1) + 2 T(n/2) = O(1) + 2.T(n/2)
+
+A = 2 Llama a las dos mitades.
+B = 2 Parte en dos el arreglo
+C = 0 Todas las operaciones internas son de orden O(1)
+
+log b (a) = 1 > c => O(n) --> estamos ante un algoritmo de orden lineal.
 */
